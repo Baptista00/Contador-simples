@@ -1,22 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>contador</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador Moderno</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-  <h1>Contador</h1>
+  <main class="app-shell">
+    <section class="counter-card" aria-labelledby="titulo-contador">
+      <p class="eyebrow">Contador moderno</p>
+      <h1 id="titulo-contador">Contador interativo</h1>
+      <p class="description">
+        Ajuste o valor com um clique, use as setas do teclado e personalize o contador como quiser.
+      </p>
 
-  <p id="numero">0</p>
+      <div class="display-panel">
+        <span class="display-label">Valor atual</span>
+        <div id="numero" class="counter-value" aria-live="polite">0</div>
+      </div>
 
-  <button id="menos">-</button>
-  <button id="mais">+</button>
+      <div class="controls">
+        <button id="menos" class="action-button danger" aria-label="Diminuir valor">−</button>
+        <button id="reset" class="action-button neutral">Resetar</button>
+        <button id="mais" class="action-button success" aria-label="Aumentar valor">+</button>
+      </div>
 
-  <p id="mensagem"></p>
-</div>
+      <div class="customizer">
+        <label for="valor-personalizado">Definir valor</label>
+        <div class="input-row">
+          <input id="valor-personalizado" type="number" min="-50" max="200" value="0">
+          <button id="aplicar" class="action-button secondary">Aplicar</button>
+        </div>
+      </div>
+
+      <div class="status-area">
+        <p id="mensagem" class="message info" role="status">Comece ajustando o valor.</p>
+        <div class="progress-bar" aria-hidden="true">
+          <span id="progress-fill"></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
